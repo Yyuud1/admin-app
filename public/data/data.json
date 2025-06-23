@@ -1,0 +1,34 @@
+{
+  "sidebarItems": [
+    {
+      "name": "Dashboard",
+      "href": "/dashboard",
+      "icon": "House"
+    },
+    {
+      "name": "Pengajuan Cuti",
+      "href": "/pengguna",
+      "icon": "Users"
+    },
+    {
+      "name": "Notifikasi",
+      "href": "/notifikasi",
+      "icon": "Bell"
+    },
+    {
+      "name": "Email",
+      "href": "/email",
+      "icon": "Mail"
+    },
+    {
+      "name": "Tentang",
+      "href": "/tentang",
+      "icon": "Info"
+    },
+    {
+      "name": "Pengaturan",
+      "href": "/pengaturan",
+      "icon": "Settings"
+    }
+  ]
+}

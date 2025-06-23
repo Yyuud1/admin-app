@@ -30,5 +30,13 @@
       "href": "/pengaturan",
       "icon": "Settings"
     }
+  ],
+  "sales": [
+    { "name": "Jan", "value": 120 },
+    { "name": "Feb", "value": 150 },
+    { "name": "Mar", "value": 200 },
+    { "name": "Apr", "value": 180 },
+    { "name": "May", "value": 220 },
+    { "name": "Jun", "value": 240 }
   ]
 }

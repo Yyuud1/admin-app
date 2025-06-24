@@ -30,7 +30,7 @@ const SalesOverviewChart = () => {
       transition={{ delay: 0.2, duration: 0.5 }}
     >
       <h2 className="text-base md:text-lg font-medium mb-4 text-gray-100 text-center md:text-left">
-        Sales Overview
+        Overview
       </h2>
 
       <div className="h-64 md:h-80">
@@ -54,7 +54,7 @@ const SalesOverviewChart = () => {
             />
             <Line
               type="monotone"
-              dataKey="sales"
+              dataKey="value"
               stroke="#9c27b0"
               strokeWidth={3}
               dot={{ fill: "#9c27b0", strokeWidth: 2, r: 4 }}

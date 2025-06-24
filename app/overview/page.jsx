@@ -1,10 +1,11 @@
 "use client";
 
 import StatCard from "@/components/StatCard";
-import { DollarSign, ShoppingBag, SquareActivity, Users } from "lucide-react";
+import { Calendar, Hospital, SquareActivity, Users } from "lucide-react";
 import React from "react";
 import { motion } from "framer-motion";
 import SalesOverviewChart from "@/components/SalesOverviewChart";
+import CategoryDistributionChart from "@/components/CategoryDIstributionChart";
 
 const OverviewPage = () => {
   return (
@@ -16,14 +17,15 @@ const OverviewPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <StatCard name="Total Sales" icon={DollarSign} value="Rp. 100.000" />
-          <StatCard name="Total Clients" icon={Users} value="150" />
-          <StatCard name="Total Products" icon={ShoppingBag} value="555" />
-          <StatCard name="Stock" icon={SquareActivity} value="12.000" />
+          <StatCard name="Cuti Tahunan" icon={Calendar} value="1500" />
+          <StatCard name="Cuti Sakit" icon={Hospital} value="150" />
+          <StatCard name="Cuti Melahirkan" icon={Users} value="250" />
+          <StatCard name="Cuti Penting" icon={SquareActivity} value="95" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <SalesOverviewChart />
+          <CategoryDistributionChart />
         </div>
       </main>
     </div>

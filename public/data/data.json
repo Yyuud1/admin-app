@@ -38,5 +38,11 @@
     { "name": "Apr", "value": 180 },
     { "name": "May", "value": 220 },
     { "name": "Jun", "value": 240 }
+  ],
+  "categories": [
+    { "name": "Cuti Tahunan", "value": 100 },
+    { "name": "Cuti Sakit", "value": 50 },
+    { "name": "Cuti Melahirkan", "value": 25 },
+    { "name": "Cuti Penting", "value": 10 }
   ]
 }

@@ -13,7 +13,7 @@ import {
 } from "recharts";
 import { motion } from "framer-motion";
 
-const SalesOverviewChart = () => {
+const OverviewChart = () => {
   const [salesData, setSalesData] = useState([]);
 
   useEffect(() => {
@@ -67,4 +67,4 @@ const SalesOverviewChart = () => {
   );
 };
 
-export default SalesOverviewChart;
+export default OverviewChart;

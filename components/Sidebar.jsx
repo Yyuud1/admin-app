@@ -1,15 +1,5 @@
 "use client";
-import {
-  Bell,
-  DollarSign,
-  House,
-  Info,
-  Mail,
-  Settings,
-  ShoppingBag,
-  ShoppingCart,
-  Users,
-} from "lucide-react";
+import { Bell, House, Info, Mail, Settings, Users } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";

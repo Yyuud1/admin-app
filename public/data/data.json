@@ -2,12 +2,12 @@
   "sidebarItems": [
     {
       "name": "Dashboard",
-      "href": "/dashboard",
+      "href": "/",
       "icon": "House"
     },
     {
       "name": "Pengajuan Cuti",
-      "href": "/pengguna",
+      "href": "/pengajuan",
       "icon": "Users"
     },
     {
@@ -44,5 +44,43 @@
     { "name": "Cuti Sakit", "value": 50 },
     { "name": "Cuti Melahirkan", "value": 25 },
     { "name": "Cuti Penting", "value": 10 }
+  ],
+  "products": [
+    {
+      "id": "P001",
+      "name": "Ayu Tresna Nurman Jaya, S.E",
+      "image": "/images/user.png",
+      "category": "Cuti Tahunan",
+      "price": 100000,
+      "stock": 50,
+      "sales": 10
+    },
+    {
+      "id": "P002",
+      "name": "Ambo Tuo, S.Kom",
+      "image": "/images/user.png",
+      "category": "Cuti Tahunan",
+      "price": 200000,
+      "stock": 30,
+      "sales": 5
+    },
+    {
+      "id": "P003",
+      "name": "Aldine Ferdinand, S.Kom",
+      "image": "/images/user.png",
+      "category": "Cuti Sakit",
+      "price": 300000,
+      "stock": 40,
+      "sales": 15
+    },
+    {
+      "id": "P004",
+      "name": "M. Rifaldy, SE",
+      "image": "/images/user.png",
+      "category": "Cuti Bulan Madu",
+      "price": 300000,
+      "stock": 40,
+      "sales": 15
+    }
   ]
 }

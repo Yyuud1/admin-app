@@ -4,6 +4,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Edit, Save, Search, Trash2 } from "lucide-react";
 import Image from "next/image";
+import toast from "react-hot-toast";
 
 const PengajuanTable = () => {
   const [pengajuan, setPengajuan] = useState([]);
@@ -24,6 +25,7 @@ const PengajuanTable = () => {
 
   const handleSaveClick = () => {
     setEditingRow(null);
+    toast.success("kuota berhasil diedit");
   };
 
   const handleChange = (id, value) => {
@@ -33,6 +35,36 @@ const PengajuanTable = () => {
         item.id === id ? { ...item, kuota: Number(value) } : item
       )
     );
+  };
+
+  const handleDelete = (id) => {
+    toast.custom((t) => (
+      <div
+        className={`bg-white border border-gray-300 shadow-lg rounded-lg p-4 flex items-center space-x-4 transition-all duration-300 ${
+          t.visible ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <span className="text-gray-700">Yakin ingin hapus data ini?</span>
+        <div className="ml-auto flex space-x-2">
+          <button
+            onClick={() => {
+              setPengajuan((prev) => prev.filter((item) => item.id !== id));
+              toast.dismiss(t.id);
+              toast.success("Data berhasil dihapus 🗑️");
+            }}
+            className="bg-red-400 cursor-pointer hover:bg-red-300 text-white px-3 py-1 rounded text-sm"
+          >
+            Hapus
+          </button>
+          <button
+            onClick={() => toast.dismiss(t.id)}
+            className="bg-gray-400 cursor-pointer hover:bg-gray-300 text-gray-800 px-3 py-1 rounded text-sm"
+          >
+            Batal
+          </button>
+        </div>
+      </div>
+    ));
   };
 
   useEffect(() => {
@@ -48,13 +80,13 @@ const PengajuanTable = () => {
 
   return (
     <motion.div
-      className="bg-[#1e1e1e] backdrop-blur-md shadow-lg rounded-xl p-4 md:p-6 border border-[#1f1f1f] mx-2 md:mx-0 mb-8"
+      className="bg-[#fff] backdrop-blur-md shadow-lg rounded-xl p-4 md:p-6 mx-2 md:mx-0 mb-8"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2, duration: 0.5 }}
     >
       <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4 md:gap-0">
-        <h2 className="text-lg md:text-xl font-semibold text-gray-100 text-center md:text-left mb-4">
+        <h2 className="text-lg md:text-xl font-semibold text-slate-500 text-center md:text-left mb-4">
           Daftar Pengajuan Cuti
         </h2>
 
@@ -64,21 +96,21 @@ const PengajuanTable = () => {
             placeholder="cari pengajuan.."
             onChange={(e) => setSearchTerm(e.target.value)}
             value={searchTerm}
-            className="bg-[#2f2f2f] text-white placeholder-gray-400 rounded-lg pl-10 pr-4 py-2 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-gray-500 transition duration-200 text-sm"
+            className="bg-gray-200 text-slate-500 placeholder-gray-500 rounded-lg pl-10 pr-4 py-2 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-gray-500 transition duration-200 text-sm"
           />
-          <Search className="absolute left-3 top-2.5 text-gray-400" size={18} />
+          <Search className="absolute left-3 top-2.5 text-gray-500" size={18} />
         </div>
       </div>
 
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-700">
+        <table className="min-w-full divide-y divide-slate-400">
           <thead>
             <tr>
               {["Name", "ID Pengajuan", "Jenis Cuti", "Kuota", "Actions"].map(
                 (header) => (
                   <th
                     key={header}
-                    className="px-3 md:px-6 py-2 md:py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider hidden md:table-cell"
+                    className="px-3 md:px-6 py-2 md:py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider hidden md:table-cell"
                   >
                     {header}
                   </th>
@@ -87,7 +119,7 @@ const PengajuanTable = () => {
             </tr>
           </thead>
 
-          <tbody className="divide-y divide-gray-700">
+          <tbody className="divide-y divide-slate-500">
             {filteredPengajuan.map((item) => (
               <motion.tr
                 key={item.id}
@@ -110,7 +142,7 @@ const PengajuanTable = () => {
                         className="w-9 h-9 rounded-full"
                       />
                       <div className="ml-3">
-                        <div className="text-sm font-medium text-gray-100">
+                        <div className="text-sm font-medium text-slate-500">
                           {item.name}
                         </div>
                         <div className="text-xs text-gray-400">
@@ -120,7 +152,7 @@ const PengajuanTable = () => {
                     </div>
                     <div className="flex space-x-1 -mt-1 -mr-1">
                       <button
-                        className="text-indigo-500 hover:text-indigo-300 cursor-pointer"
+                        className="text-blue-500 hover:text-blue-400 cursor-pointer"
                         onClick={() =>
                           editingRow === item.id
                             ? handleSaveClick()
@@ -133,13 +165,16 @@ const PengajuanTable = () => {
                           <Edit size={16} />
                         )}
                       </button>
-                      <button className="text-red-500 hover:text-red-300 cursor-pointer">
+                      <button
+                        className="text-red-300 hover:text-red-200 cursor-pointer"
+                        onClick={() => handleDelete(item.id)}
+                      >
                         <Trash2 size={16} />
                       </button>
                     </div>
                   </div>
 
-                  <div className="mt-2 text-xs text-gray-300">
+                  <div className="mt-2 text-xs text-gray-500">
                     <div>Jenis Cuti: {item.jenisCuti}</div>
                     <div>
                       Kuota:{" "}
@@ -160,7 +195,7 @@ const PengajuanTable = () => {
                 </td>
 
                 {/* Desktop view */}
-                <td className="hidden md:table-cell px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-100">
+                <td className="hidden md:table-cell px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-500">
                   <div className="flex items-center">
                     <Image
                       src={item.image}
@@ -173,18 +208,18 @@ const PengajuanTable = () => {
                   </div>
                 </td>
 
-                <td className="hidden md:table-cell px-6 py-4 text-sm text-gray-300">
+                <td className="hidden md:table-cell px-6 py-4 text-sm text-slate-500">
                   {item.id}
                 </td>
-                <td className="hidden md:table-cell px-6 py-4 text-sm text-gray-300">
+                <td className="hidden md:table-cell px-6 py-4 text-sm text-slate-500">
                   {item.jenisCuti}
                 </td>
 
-                <td className="hidden md:table-cell px-6 py-4 text-sm text-gray-300">
+                <td className="hidden md:table-cell px-6 py-4 text-sm text-slate-500">
                   {editingRow === item.id ? (
                     <input
                       type="text"
-                      className="bg-transparent text-white border border-gray-400 w-16 text-center"
+                      className="bg-transparent text-white w-16 text-center"
                       value={item.kuota}
                       onChange={(e) => handleChange(item.id, e.target.value)}
                     />
@@ -193,10 +228,10 @@ const PengajuanTable = () => {
                   )}
                 </td>
 
-                <td className="hidden md:table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-300">
+                <td className="hidden md:table-cell px-6 py-4 whitespace-nowrap text-sm text-slate-500">
                   <div className="flex space-x-1 -ml-2">
                     <button
-                      className="text-indigo-500 hover:text-indigo-300 mr-1 cursor-pointer"
+                      className="text-blue-500 hover:text-blue-400 mr-1 cursor-pointer"
                       onClick={() =>
                         editingRow === item.id
                           ? handleSaveClick()
@@ -209,7 +244,10 @@ const PengajuanTable = () => {
                         <Edit size={18} />
                       )}
                     </button>
-                    <button className="text-red-500 hover:text-red-300 cursor-pointer">
+                    <button
+                      className="text-red-400 hover:text-red-300 cursor-pointer"
+                      onClick={() => handleDelete(item.id)}
+                    >
                       <Trash2 size={18} />
                     </button>
                   </div>

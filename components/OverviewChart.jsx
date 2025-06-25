@@ -24,12 +24,12 @@ const OverviewChart = () => {
 
   return (
     <motion.div
-      className="bg-[#1e1e1e] backdrop-blur-md shadow-lg rounded-xl p-4 md:p-6 border border-[#1f1f1f1] mx-2 md:mx-0"
+      className="bg-[#fff] backdrop-blur-md shadow-lg rounded-xl p-4 md:p-6 border border-[#1f1f1f1] mx-2 md:mx-0"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2, duration: 0.5 }}
     >
-      <h2 className="text-base md:text-lg font-medium mb-4 text-gray-100 text-center md:text-left">
+      <h2 className="text-base md:text-lg font-medium mb-4 text-slate-600 text-center md:text-left">
         Overview
       </h2>
 
@@ -50,14 +50,14 @@ const OverviewChart = () => {
                 borderColor: "4b5563",
                 fontSize: "12px",
               }}
-              itemStyle={{ color: "#e5e7eb" }}
+              itemStyle={{ color: "salmon" }}
             />
             <Line
               type="monotone"
               dataKey="value"
-              stroke="#9c27b0"
+              stroke="salmon"
               strokeWidth={3}
-              dot={{ fill: "#9c27b0", strokeWidth: 2, r: 4 }}
+              dot={{ fill: "#ddd", strokeWidth: 2, r: 4 }}
               activeDot={{ r: 6, strokeWidth: 2 }}
             />
           </LineChart>

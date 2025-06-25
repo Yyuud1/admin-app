@@ -51,21 +51,28 @@
       "name": "Ayu Tresna Nurman Jaya, S.E",
       "image": "/images/user.png",
       "jenisCuti": "Cuti Tahunan",
-      "kuota": 5
+      "kuota": 12
     },
     {
       "id": "C002",
       "name": "Ambo Tuo, S.Kom",
       "image": "/images/user.png",
       "jenisCuti": "Cuti Tahunan",
-      "kuota": 3
+      "kuota": 15
     },
     {
       "id": "C003",
       "name": "Aldine Ferdinand, S.Kom",
       "image": "/images/user.png",
-      "jenisCuti": "Cuti WIK-WIK",
-      "kuota": 4
+      "jenisCuti": "Cuti Melahirkan",
+      "kuota": 20
+    },
+    {
+      "id": "C004",
+      "name": "Yuda Anugrah, S.Kom, M.Kom, M.Si",
+      "image": "/images/user.png",
+      "jenisCuti": "Cuti Melahirkan",
+      "kuota": 12
     }
   ]
 }

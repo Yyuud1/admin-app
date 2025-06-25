@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import { color } from "framer-motion";
 
 const ICONS = {
   House,
@@ -31,10 +32,10 @@ const Sidebar = () => {
         isSidebarOpen ? "w-64" : "w-20"
       }`}
     >
-      <div className="h-full bg-[#1e1e1e] backdrop-blur-md p-4 flex flex-col border-r border-[#2f2f2f]">
+      <div className="h-full bg-[#fff] backdrop-blur-md p-4 flex flex-col">
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="p-2 rounded-full hover:bg-[#2f2f2f] transition-colors max-w-fit cursor-pointer"
+          className="p-2 rounded-full text-slate-500 transition-colors max-w-fit cursor-pointer"
         >
           <Menu size={24} />
         </button>
@@ -45,8 +46,8 @@ const Sidebar = () => {
             return (
               <Link key={item.name} href={item.href}>
                 <div
-                  className={`flex items-center p-4 text-sm font-medium rounded-lg hover:bg-[#2f2f2f] transition-colors mb-2 ${
-                    pathname === item.href ? "bg-[#2f2f2f]" : ""
+                  className={`flex items-center p-4 text-sm text-slate-500 font-medium rounded-lg hover:bg-blue-400 hover:text-white transition-colors mb-2 ${
+                    pathname === item.href ? "bg-blue-400 text-white" : ""
                   }`}
                 >
                   <IconComponent size={20} style={{ minWidth: "20px" }} />

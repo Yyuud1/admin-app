@@ -16,10 +16,30 @@ const PengajuanPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <StatCard name="Cuti Tahunan" icon={Calendar} value="1500" />
-          <StatCard name="Cuti Sakit" icon={Hospital} value="150" />
-          <StatCard name="Cuti Melahirkan" icon={Users} value="250" />
-          <StatCard name="Cuti Penting" icon={SquareActivity} value="95" />
+          <StatCard
+            name="Cuti Tahunan"
+            bgColor="bg-blue-400"
+            icon={Calendar}
+            value="100"
+          />
+          <StatCard
+            name="Cuti Sakit"
+            bgColor="bg-blue-400"
+            icon={Hospital}
+            value="50"
+          />
+          <StatCard
+            name="Cuti Melahirkan"
+            bgColor="bg-blue-400"
+            icon={Users}
+            value="25"
+          />
+          <StatCard
+            name="Cuti Penting"
+            bgColor="bg-blue-400"
+            icon={SquareActivity}
+            value="10"
+          />
         </motion.div>
 
         <PengajuanTable />

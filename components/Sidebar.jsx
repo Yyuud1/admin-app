@@ -1,5 +1,5 @@
 "use client";
-import { Bell, House, Info, Mail, Settings, Users } from "lucide-react";
+import { Bell, House, Info, Settings, Users } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -9,7 +9,6 @@ import { color } from "framer-motion";
 const ICONS = {
   House,
   Settings,
-  Mail,
   Users,
   Bell,
   Info,

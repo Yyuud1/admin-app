@@ -25,7 +25,7 @@ const PengajuanTable = () => {
 
   const handleSaveClick = () => {
     setEditingRow(null);
-    toast.success("kuota berhasil diedit");
+    toast.success("kuota berhasil diperbarui");
   };
 
   const handleChange = (id, value) => {
@@ -106,16 +106,21 @@ const PengajuanTable = () => {
         <table className="min-w-full divide-y divide-slate-400">
           <thead>
             <tr>
-              {["Name", "ID Pengajuan", "Jenis Cuti", "Kuota", "Actions"].map(
-                (header) => (
-                  <th
-                    key={header}
-                    className="px-3 md:px-6 py-2 md:py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider hidden md:table-cell"
-                  >
-                    {header}
-                  </th>
-                )
-              )}
+              {[
+                "Name",
+                "Nip",
+                "ID Pengajuan",
+                "Jenis Cuti",
+                "Kuota",
+                "Actions",
+              ].map((header) => (
+                <th
+                  key={header}
+                  className="px-3 md:px-6 py-2 md:py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider hidden md:table-cell"
+                >
+                  {header}
+                </th>
+              ))}
             </tr>
           </thead>
 
@@ -144,6 +149,9 @@ const PengajuanTable = () => {
                       <div className="ml-3">
                         <div className="text-sm font-medium text-slate-500">
                           {item.name}
+                        </div>
+                        <div className="text-sm font-medium text-slate-500">
+                          {item.nip}
                         </div>
                         <div className="text-xs text-gray-400">
                           ID: {item.id}
@@ -209,8 +217,13 @@ const PengajuanTable = () => {
                 </td>
 
                 <td className="hidden md:table-cell px-6 py-4 text-sm text-slate-500">
+                  {item.nip}
+                </td>
+
+                <td className="hidden md:table-cell px-6 py-4 text-sm text-slate-500">
                   {item.id}
                 </td>
+
                 <td className="hidden md:table-cell px-6 py-4 text-sm text-slate-500">
                   {item.jenisCuti}
                 </td>

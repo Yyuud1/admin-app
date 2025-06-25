@@ -1,11 +1,11 @@
 "use client";
 
-import StatCard from "@/components/StatCard";
+import StatCard from "../../components/StatCard";
 import { Calendar, Hospital, SquareActivity, Users } from "lucide-react";
 import React from "react";
 import { motion } from "framer-motion";
-import OverviewChart from "@/components/OverviewChart";
-import CategoryDistributionChart from "@/components/CategoryDIstributionChart";
+import OverviewChart from "../../components/OverviewChart";
+import CategoryDistributionChart from "../../components/CategoryDistributionChart";
 
 const OverviewPage = () => {
   return (

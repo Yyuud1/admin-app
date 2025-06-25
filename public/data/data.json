@@ -16,11 +16,6 @@
       "icon": "Bell"
     },
     {
-      "name": "Email",
-      "href": "/email",
-      "icon": "Mail"
-    },
-    {
       "name": "Tentang",
       "href": "/tentang",
       "icon": "Info"
@@ -49,13 +44,15 @@
     {
       "id": "C001",
       "name": "Ayu Tresna Nurman Jaya, S.E",
-      "image": "/images/user.png",
+      "nip": 198609262015051001,
+      "image": "/images/user-woman.png",
       "jenisCuti": "Cuti Tahunan",
       "kuota": 12
     },
     {
       "id": "C002",
       "name": "Ambo Tuo, S.Kom",
+      "nip": 198609262015051001,
       "image": "/images/user.png",
       "jenisCuti": "Cuti Tahunan",
       "kuota": 15
@@ -63,6 +60,7 @@
     {
       "id": "C003",
       "name": "Aldine Ferdinand, S.Kom",
+      "nip": 198609262015051001,
       "image": "/images/user.png",
       "jenisCuti": "Cuti Melahirkan",
       "kuota": 20
@@ -70,6 +68,7 @@
     {
       "id": "C004",
       "name": "Yuda Anugrah, S.Kom, M.Kom, M.Si",
+      "nip": 198609262015051001,
       "image": "/images/user.png",
       "jenisCuti": "Cuti Melahirkan",
       "kuota": 12

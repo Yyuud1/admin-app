@@ -2,9 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import StatCard from "@/components/StatCard";
+import StatCard from "../../components/StatCard";
 import { Calendar, Hospital, SquareActivity, Users } from "lucide-react";
-import PengajuanTable from "@/components/PengajuanTable";
+import PengajuanTable from "../../components/PengajuanTable";
 
 const PengajuanPage = () => {
   return (
